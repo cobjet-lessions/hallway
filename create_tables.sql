@@ -59,3 +59,15 @@ CREATE TABLE IF NOT EXISTS `Entries` (
        PRIMARY KEY (`base`),
        UNIQUE KEY `idr_index` (`idr`)
 ) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `Chunks` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `base` binary(16) NOT NULL,
+  `path` char(64) NOT NULL,
+  `at1` int(10) unsigned NOT NULL,
+  `at2` int(10) unsigned NOT NULL,
+  `count` int(4) unsigned NOT NULL,
+  `cat` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `base_index` (`base`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
