@@ -23,7 +23,11 @@ function errorAndQuit(err) {
 function sync(pid, callback) {
   logger.debug('Syncing', pid);
   var parts = pid.split('@');
-  rclient.zadd([parts[1]+"_schedule", 3, parts[0]], callback);
+  profileManager.resetLocal(pid, function(){
+    KVSTORE.put("tasks", pid, {}, function () {
+      rclient.zadd([parts[1]+"_schedule", 3, parts[0]], callback);
+    });    
+  });
 }
 
 function getPids(callback) {
@@ -40,7 +44,7 @@ function run() {
 
     logger.info('Syncing', pids.length, 'profiles');
 
-    var queue = async.queue(sync, 300);
+    var queue = async.queue(sync, 50);
 
     queue.drain = function(err) {
       logger.info('Done');
@@ -54,6 +58,7 @@ function run() {
   });
 }
 
+KVSTORE = require('kvstore').instance(lconfig.taskman.store.type, lconfig.taskman.store);
 rclient.select(3, function (err) {
   profileManager.init(run);
 });
