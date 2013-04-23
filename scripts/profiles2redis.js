@@ -24,9 +24,9 @@ function sync(pid, callback) {
   logger.debug('Syncing', pid);
   var parts = pid.split('@');
   profileManager.resetLocal(pid, function(){
-    KVSTORE.put("tasks", pid, {}, function () {
+//    KVSTORE.put("tasks", pid, {}, function () {
       rclient.zadd([parts[1]+"_schedule", 3, parts[0]], callback);
-    });    
+//    });    
   });
 }
 
