@@ -1,16 +1,15 @@
-# Singly Hallway - Empowering Personal Data Applications 
+# Singly Hallway - Empowering Personal Data Applications
 
 [![Build Status](https://travis-ci.org/Singly/hallway.png)](https://travis-ci.org/Singly/hallway)
 
 This is an open source project to help developers build amazing applications
 combining data from many sources easily, through one API. This codebase is
-currently live and powering [api.singly.com](https://singly.com/) so sign in
+currently live and powering [api.singly.com](https://singly.com/). Sign in
 and start building!
 
 [Background Video](http://www.youtube.com/watch?v=pTNO5npNq28)
 
-Follow [@singly](http://twitter.com/singly) and come hang out with us in
-[HipChat](http://support.singly.com/).
+Follow [@singly](http://twitter.com/singly) and check out our [blog](http://blog.singly.com).
 
 Let's get started:
 
