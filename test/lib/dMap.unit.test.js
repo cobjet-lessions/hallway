@@ -86,17 +86,6 @@ describe('dMap', function () {
     });
   });
 
-  describe('#media()', function () {
-    it('should return a media function when it exists', function () {
-      var result = dMap.media({
-        idr: 'contact:blodulv%40gmail.com@gcontacts/contacts#d59278c8f6ca246',
-        data: {}
-      });
-
-      result.should.be.a('function');
-    });
-  });
-
   describe('#guid()', function () {
     it('should return a GUID if one exists', function () {
       var guid = dMap.guid(EXAMPLE_ENTRY);
@@ -118,22 +107,6 @@ describe('dMap', function () {
   describe('#pump()', function () {});
   describe('#loadcheck()', function () {});
   describe('#defaultcheck()', function () {});
-
-  describe('#partype()', function () {
-    it('should return the correct type number', function () {
-      dMap.partype('first').should.equal(1);
-      dMap.partype('last').should.equal(2);
-      dMap.partype('facebook').should.equal(100);
-
-      dMap.partype(1).should.equal('first');
-      dMap.partype(2).should.equal('last');
-      dMap.partype(100).should.equal('facebook');
-    });
-
-    it('should return 0 when the type does not exist', function () {
-      dMap.partype('INVALID').should.equal(0);
-    });
-  });
 
   describe('#types()', function () {
     it('should return bases', function () {

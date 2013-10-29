@@ -57,32 +57,9 @@ function startAPIHost(cbDone) {
   });
 }
 
-function startDawg(cbDone) {
-  if (!lconfig.dawg || !lconfig.dawg.port || !lconfig.dawg.password) {
-    logger.error("You must specify a dawg section with at least a port and " +
-      "password to run.");
-
-    process.exit(1);
-  }
-
-  logger.vital("Starting a Hallway Dawg -- Think you can get away without " +
-    "having a hall pass?  Think again.");
-
-  var dawg = require('dawg');
-
-  dawg.startService(lconfig.dawg.port, lconfig.dawg.listenIP, function () {
-    logger.vital("The Dawg is now monitoring at port %d", lconfig.dawg.port);
-
-    cbDone();
-  });
-}
-
 var Roles = {
   apihost: {
     startup: startAPIHost
-  },
-  dawg: {
-    startup: startDawg
   }
 };
 
@@ -109,44 +86,22 @@ startupTasks.push(function (cb) {
   cb();
 });
 startupTasks.push(require('tokenz').init);
-
-var profileManager = require('profileManager');
-startupTasks.push(profileManager.init);
-profileManager.setRole(rolename);
-
-if (role !== Roles.dawg) {
-  var acl = require('acl');
-  startupTasks.push(acl.init);
-  acl.setRole(rolename);
-}
-
-if (role.startup) {
-  startupTasks.push(role.startup);
-}
+startupTasks.push(require('profileManager').init);
+startupTasks.push(role.startup);
 
 async.series(startupTasks, function (err) {
   if (err) {
     logger.error('Error during startup', err);
-
     process.exit(1);
   }
 
   logger.vital("Hallway is up and running.");
-
   exports.alive = true;
 });
 
 process.on("SIGINT", function () {
   logger.vital("Shutting down via SIGINT...");
-
-  switch (role) {
-  case Roles.apihost:
-    process.exit(0);
-    break;
-  default:
-    process.exit(0);
-    break;
-  }
+  process.exit(0);
 });
 
 process.on("SIGTERM", function () {

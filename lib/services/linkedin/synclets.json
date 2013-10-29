@@ -55,22 +55,6 @@
       "name": "self",
       "frequency": 86400,
       "class": "core"
-    },
-    {
-      "name": "updates",
-      "frequency": 3600,
-      "class": "personal"
-    },
-    {
-      "name": "network",
-      "frequency": 3600,
-      "class": "core"
-    },
-    {
-      "name": "connections",
-      "frequency": 86400,
-      "class": "core",
-      "freshInstead": "network"
     }
   ]
 }

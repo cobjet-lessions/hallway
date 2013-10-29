@@ -32,7 +32,6 @@ var GOOD_ACCESS_TOKEN = 'JrY54j9w8SToWDYFDPDykSZrsR4.EKO8Xl-m96c3fbe6b28d2401' +
   '22e5858622d1afc7096bebdb0133ee03d334a3fa7d4bb6804a76c76a26fa5697852b8dd07a' +
   'a32fa65766f6a7d27746a5456fe357b8fa3017';
 
-before(acl.init);
 before(tokenz.init);
 
 describe('tokenz', function () {
