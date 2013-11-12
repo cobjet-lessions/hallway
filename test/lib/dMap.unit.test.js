@@ -86,17 +86,6 @@ describe('dMap', function () {
     });
   });
 
-  describe('#media()', function () {
-    it('should return a media function when it exists', function () {
-      var result = dMap.media({
-        idr: 'contact:blodulv%40gmail.com@gcontacts/contacts#d59278c8f6ca246',
-        data: {}
-      });
-
-      result.should.be.a('function');
-    });
-  });
-
   describe('#guid()', function () {
     it('should return a GUID if one exists', function () {
       var guid = dMap.guid(EXAMPLE_ENTRY);
