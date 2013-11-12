@@ -6,7 +6,6 @@ var path = require('path');
 var helper  = require(path.join(__dirname, '..', '..', 'support', 'locker-helper.js'));
 
 var self = require(path.join('services', 'linkedin', 'self.js'));
-var lib = require(path.join('services', 'linkedin', 'lib.js'));
 
 
 describe("linkedin connector", function () {
