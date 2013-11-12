@@ -108,22 +108,6 @@ describe('dMap', function () {
   describe('#loadcheck()', function () {});
   describe('#defaultcheck()', function () {});
 
-  describe('#partype()', function () {
-    it('should return the correct type number', function () {
-      dMap.partype('first').should.equal(1);
-      dMap.partype('last').should.equal(2);
-      dMap.partype('facebook').should.equal(100);
-
-      dMap.partype(1).should.equal('first');
-      dMap.partype(2).should.equal('last');
-      dMap.partype(100).should.equal('facebook');
-    });
-
-    it('should return 0 when the type does not exist', function () {
-      dMap.partype('INVALID').should.equal(0);
-    });
-  });
-
   describe('#types()', function () {
     it('should return bases', function () {
       var bases = dMap.types('photos', ['42@facebook', '42@instagram']);
