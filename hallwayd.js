@@ -91,10 +91,6 @@ var profileManager = require('profileManager');
 startupTasks.push(profileManager.init);
 profileManager.setRole(rolename);
 
-  var acl = require('acl');
-  startupTasks.push(acl.init);
-  acl.setRole(rolename);
-
 if (role.startup) {
   startupTasks.push(role.startup);
 }
@@ -102,12 +98,10 @@ if (role.startup) {
 async.series(startupTasks, function (err) {
   if (err) {
     logger.error('Error during startup', err);
-
     process.exit(1);
   }
 
   logger.vital("Hallway is up and running.");
-
   exports.alive = true;
 });
 
