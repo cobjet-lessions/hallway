@@ -25,7 +25,6 @@ dalFake.addFake('SELECT profile FROM Accounts WHERE account = ?', PROFILES);
 
 dal.setBackend('fake');
 
-var acl = require('acl');
 var tokenz = require('tokenz');
 
 var GOOD_ACCESS_TOKEN = 'JrY54j9w8SToWDYFDPDykSZrsR4.EKO8Xl-m96c3fbe6b28d2401' +
