@@ -86,14 +86,8 @@ startupTasks.push(function (cb) {
   cb();
 });
 startupTasks.push(require('tokenz').init);
-
-var profileManager = require('profileManager');
-startupTasks.push(profileManager.init);
-profileManager.setRole(rolename);
-
-if (role.startup) {
-  startupTasks.push(role.startup);
-}
+startupTasks.push(require('profileManager').init);
+startupTasks.push(role.startup);
 
 async.series(startupTasks, function (err) {
   if (err) {
