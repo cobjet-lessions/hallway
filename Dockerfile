@@ -4,7 +4,6 @@ FROM dockerfile/nodejs
 
 MAINTAINER Simon Murtha Smith <simon.smith@appcelerator.com>
 
-
 # currently required for murmurhash
 RUN apt-get install -y python
 
