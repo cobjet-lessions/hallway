@@ -29,8 +29,11 @@ done
 # Make sure we have some API keys, otherwise we can't do much
 apikeys=Config/apikeys.json
 if [ ! -f "$apikeys" ]; then
-    echo "No API keys found in $apikeys" >&2
-    exit 1
+    echo "WARNING: No API keys found in $apikeys" >&2
+    if [ "$hallway_mode" == "production" ]
+    then
+      exit 1
+    fi
 fi
 
 monitor() {
