@@ -28,6 +28,7 @@
     "grunt-simple-mocha": "0.3.x",
     "mocha": "1.7.x",
     "node-fakeweb": "0.0.8",
+    "pcron": "git+https://github.com/Singly/pcron.git",
     "supertest": "0.5.x",
     "temp": "0.5.x"
   },
@@ -57,7 +58,6 @@
     "oauth": "0.9.6",
     "optimist": "0.3.x",
     "password-hash": "1.2.1",
-    "pcron": "git+https://github.com/Singly/pcron.git",
     "request": "2.14.x",
     "sanitizer": "0.0.15",
     "serializer": "0.0.x",
