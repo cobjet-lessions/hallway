@@ -11,7 +11,7 @@ RUN apt-get install -y python
 ADD . /app
 
 # Install app dependencies
-RUN cd /app; npm install --production
+#RUN cd /app; npm install --production
 
 EXPOSE  8080
 WORKDIR /app
