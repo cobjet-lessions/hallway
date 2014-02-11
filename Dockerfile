@@ -8,7 +8,7 @@ MAINTAINER Simon Murtha Smith <simon.smith@appcelerator.com>
 ADD . /app
 
 # Install app dependencies
-RUN cd /app; npm install
+RUN cd /app; npm install --production
 
 EXPOSE  8080
 WORKDIR /app

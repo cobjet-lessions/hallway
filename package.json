@@ -30,7 +30,6 @@
     "mocha": "1.7.x",
     "node-fakeweb": "0.0.8",
     "redis": "0.7.x",
-    "riak": "git+https://github.com/Singly/node_riak.git",
     "supertest": "0.5.x",
     "temp": "0.5.x"
   },
@@ -65,7 +64,6 @@
     "sanitizer": "0.0.15",
     "serializer": "0.0.x",
     "statsd-singly": "git+https://github.com/Singly/statsd-singly.git",
-    "toobusy": "0.2.x",
     "tumblrwks": "git+https://github.com/Singly/tumblrwks.git",
     "underscore": "1.4.x",
     "underscore.string": "2.3.x",
